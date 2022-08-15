@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./images/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="products.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a href=""><img class="logo mx-4" src="images/cryptlex_logo.png"></a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <form class="d-flex" role="search">
+
+                            <input class="form-control me-2 " type="search" placeholder="Search" aria-label="search">
+                            <img style="padding-top: 1em; margin-right: 1em;" class="fa fa-search"
+                                src="./images/font-awesome-4.7.0/fonts/" alt="">
+
+
+
+                            </button>
+                        </form>
+                        <div class="search"
+                            style=" border-radius:100px; text-transform: uppercase; color: rgb(255, 255, 255);right: 0; background-color: rgb(195, 195, 195); font: 25px / 40px Helvetica, Arial, sans-serif;">
+                            SC </div>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Saalim Chashoo
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <div style="padding:30px;" class="bg-dark text-white">
+            <button style="margin-right: 150px; position: absolute; right:0;" type="button"
+                class="btn btn-light">Tags</button>
+            <h5 style="text-align: justify;">Products</h5>
+            <p>Home > Products</p>
+        </div>
+        <div>
+            <img style="float: right;margin-right: 3em;padding-top: 0.7em" class="fa fa-plus" src="./images/font-awesome-4.7.0/fonts/" alt="" data-bs-toggle="modal" data-bs-target="#myModal">
+
+
+            <img style="float: right;margin-right:3em;padding-top: 0.7em;" class="fa fa-refresh"
+                src="./images/font-awesome-4.7.0/fonts/" alt="">
+            <img style="float: right;margin-right:3em;padding-top: 0.7em" class="fa fa-bars"
+                src="./images/font-awesome-4.7.0/fonts/" alt="">
+            <input style="width: 75%;" class="form-control me-2 " type="search" placeholder="Search"
+                aria-label="search">
+        </div>
+        <table class="table">
+            <thead style="color: grey;" class="thead">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Total Licenses</th>
+                    <th scope="col">Total Trial Activations</th>
+                    <th scope="col">Total Product Versions</th>
+                    <th scope="col">Total Releases</th>
+                    <th scope="col">Creation Date</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+        </table>
+    </div> 
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form action="" id="form-container">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name">
+                        <label for="display-name" class="form-label">Display Name</label>
+                        <input type="text" class="form-control" id="display-name">
+                        <label for="description" class="form-label">Description</label>
+                        <input type="text" class="form-control" id="description">
+                        <label  for="license-policy" class="form-label">Default License Policy</label>
+                        <select  class="form-select " 
+                            id="license-policy" required>
+                            <option selected></option>
+                            <option value="6ffbdf18-9808-4f18-b98c-3e853d5ea933
+                            ">Sample</option>
+                        </select>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">CLOSE</button>
+                            <input type="submit" class="btn btn-secondary">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="products.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.logo{
+    height: 40px;
+}
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+.modal{
+    display: none;
+}
+
+
+

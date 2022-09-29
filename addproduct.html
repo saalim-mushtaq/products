@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <form action="" id="form-container">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name">
+                            <label for="display-name" class="form-label">Display Name</label>
+                            <input type="text" class="form-control" id="display-name">
+                            <label for="description" class="form-label">Description</label>
+                            <input type="text" class="form-control" id="description">
+                            <label  for="license-policy" class="form-label">Default License Policy</label>
+                            <select  class="form-select " 
+                                id="license-policy" required>
+                                <option selected></option>
+                                <option value="6ffbdf18-9808-4f18-b98c-3e853d5ea933
+                                ">Sample</option>
+                            </select>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">CLOSE</button>
+                                <input type="submit" class="btn btn-secondary">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./node_modules/axios/dist/axios.min.js"></script>
+        <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script>
+
+let token  = localStorage.getItem('token')
+const form = document.getElementById('form-container');
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const token = localStorage.getItem('token')
+    const name = document.getElementById('name').value
+    const displayName = document.getElementById('display-name').value
+    const description = document.getElementById('description').value
+    const defaultLicensePolicy = document.getElementById('license-policy').value
+    if(token){
+        axios.post('https://api.cryptlex.com/v3/products',{
+        data: {
+            name,
+            displayName,
+            description,
+            defaultLicensePolicy
+        },
+        headers:
+        {
+            Authorization : 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJzY29wZSI6WyJmdWxsOnJlYWQiLCJmdWxsOndyaXRlIl0sInN1YiI6IjIwNzg0ODQxLWM5NTMtNDc5NS04YjJjLWI5ODNmYTJlMDhhZiIsImVtYWlsIjoic2FhbGltLmNoYXNob29AY3J5cHRsZXguY29tIiwianRpIjoiZjNkNmEyYjMtZDBkYS00ZmExLTkxMjktZmNjZjAwZTI4N2RmIiwiaWF0IjoxNjYwNTU2MTg0LCJ0b2tlbl91c2FnZSI6ImFjY2Vzc190b2tlbiIsInRlbmFudGlkIjoiOWJmOTRiNDEtNDVhNS00YmJlLWEyZTQtZDcxMTU0OGJjYzA5IiwiZXhwIjoxNjYwNTU5Nzg0LCJhdWQiOiJodHRwczovL2FwaS5jcnlwdGxleC5jb20ifQ.gGVHWjD9UHhM8nzMk7_SewRzy3awwOPnr3RHR_QNyP7tZZMYxN6LHrFDs09rrGimydPSMJpnf3Vc6_VbsOLqNJbtryPQ1vk16Uh9EyLQVYytx1CnshmhSTpRY5SqOfp-JoeW0HUS3mG-TGWblZymwwC9kJzh_Eah6ypUoqhC9P7L-nDTyzYtMlKYOg2ZlQ1k-yHsp48l3EhFoX7WFCC1oicXTciq7rp2BT25bszHs566T9bNZdrIRztCFNB4JI43wE28Szju5Ar7lK4QENhGHgp-LEAhXjcDO2HMxDYFYyxgKaXGLmKUKXtbLmXbR-e4qa_1-'        
+        }
+    }
+        )
+}
+})
+        </script>
+</body>
+</html>

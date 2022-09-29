@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="createpro.css">
+
+
+    <title>LOGIN</title>
+</head>
+
+<body style="background-color: darkgray;">
+    <div class="container-fluid">
+
+
+
+        <div class="row justify-content-center pt-5">
+            <div class="col-12 col-sm-6 col-md-6">
+                <form id="form-container">
+
+                    <div class="row">
+                        <h4>Product</h4>
+                    </div>
+                    <div style=" padding-top:3em; " class="row">
+                        <h5>DETAILS</h5>
+
+                    </div>
+
+                    <hr>
+
+
+
+                    <div class="mb-3 pt-5">
+                        <label for="exampleInputEmail1" class="form-label">Name</label>
+                        <input type="name" class="form-control" id="name" aria-describedby="emailHelp">
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Display Name</label>
+                        <input type="displayname" class="form-control" id="displayname" name="displayname">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Description</label>
+                        <input type="description" class="form-control" id="description" name="description">
+                    </div>
+                    <label  for="exampleFormControlInput1" class="form-label">Default License Policy</label>
+                    <select class="form-select form-select-lg" aria-label=".form-select-lg example"
+                        id="defaultlicensepolicy" required>
+
+                        <option selected>Default License Policy</option>
+                        <option value="1">subscription</option>
+                        <option value="2">sample</option>
+                        <option value="3">test</option>
+                        <option value="4">Norton Policy</option>
+                        <option value="4">Perinstance</option>
+                        <option value="4">testserversync</option>
+                        <option value="4">On-prem</option>
+                    </select>
+
+                    <label for="exampleFormControlInput1" class="form-label">Trial Policy</label>
+                    <select class="form-select form-select-lg" aria-label=".form-select-lg example" id="trialpolicy"
+                        required>
+
+                        <option selected>Trial Policy</option>
+                        <option value="1">30 day trial</option>
+                        <option value="2">trial period</option>
+                        <option value="3">trial-policy</option>
+
+
+                    </select>
+
+
+                    <footer style="text-align: right;">
+
+                         
+                        <h6 style="padding-right: 2em;">CLOSE</h6>
+                        <h6 style=" padding-top: 1em;">CREATE</h6>
+
+
+
+
+                    </footer>
+
+
+
+
+                   
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+
+
+</html>

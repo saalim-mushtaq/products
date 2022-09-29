@@ -1,0 +1,12 @@
+.logo{
+    height: 40px;
+}
+.fw-bold{
+    font-size: 60px;
+    color:  #3e396b;
+}
+
+.blue-bg{
+    background-color: rgb(0, 132, 255);
+    color: white;
+}

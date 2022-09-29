@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./login.css">
+
+    <title>LOGIN</title>
+</head>
+
+<body style="background-color:#455a64">
+    <div class="container-fluid">
+
+
+
+        <div class="row justify-content-center pt-5">
+            <div class="col-12 col-sm-6 col-md-3">
+                <form id="form-container">
+
+                    <div class="row">
+                        <img src="images/cryptlex_logo.png" alt="">
+                    </div>
+
+
+                    <div class="mb-3 pt-5">
+                        <label for="exampleInputEmail1" class="form-label">email</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">password</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                    </div>
+                    <div class="d-grid gap-2">
+                        <input type="submit" class="btn btn-primary" value="LOGIN" id="sb-btn"
+                            style="background-color: #455a64;">
+
+                    </div>
+                    <div class="pass-link pt-4 text-center">Forgot password?</div>
+                    <div id="success"></div>
+                    <div id="error"></div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<script>
+    const form = document.getElementById('form-container');
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // use event obj for form dt
+        const email = document.getElementById('email').value
+        const password = document.getElementById('password').value
+        var target = document.getElementById('sb-btn')
+
+        target.setAttribute('disabled', true)
+
+        fetch("https://api.cryptlex.com/v3/accounts/login", {
+            method: 'POST',
+            body: JSON.stringify({
+                email,
+                password
+                
+            }),
+            headers: {
+                "Content-type": "application/json"
+            }
+        }).then((response) => {
+            if (response.status == 200) {
+                return Promise.resolve(response);
+            } else {
+                return Promise.reject(response);
+            }
+        }).then((response) => {
+            response.json().then((responseBody) => {
+                var result = document.getElementById('success')
+                result.classList.add('alert')
+                result.classList.add('alert-success')
+                result.innerText = responseBody.message;
+            })
+        }).catch((errorResponse) => {
+            errorResponse.json().then((errorResponseBody) => {
+                var element = document.getElementById('error')
+                element.classList.add('alert')
+                element.classList.add('alert-danger')
+                element.innerText = errorResponseBody.message
+            })
+        })
+    })
+
+
+</script>
+
+
+
+
+</html>
+
+
+
+axios.post('https://api.cryptlex.com/v3/accounts/login', {
+    email,
+    password,
+    accountId: "9bf94b41-45a5-4bbe-a2e4-d711548bcc09",
+}).then((response) => {
+    localStorage.setItem('token', response.data.accessToken)
+    debugger
+    if(localStorage.getItem('token')){
+        window.location.href= 'nav.html'
+    }
+    else
+        window.location.href = 'login.html'
+}).catch((error) => {
+    let element = document.getElementById('error')
+    element.classList.add('alert')
+    element.classList.add('alert-danger')
+    element.innerText = error.response.data.message
+})
+
+})

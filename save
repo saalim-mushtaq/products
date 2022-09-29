@@ -1,0 +1,94 @@
+//   function load() {
+//             fetch("https://api.cryptlex.com/v3/products").then(result => result.json())
+//                 .then(json => show(json.data))
+//         }
+//         function show(products) {
+//             let table = document.getElementById('table')
+//             for (let i = 0; i < products.length; i++) {
+//                 let obj = products[i];
+                
+
+//                 let row = document.createElement('tr')
+//                 let name = document.createElement('td')
+//                 let total_licenses = document.createElement('td')
+//                 let trial_activations = document.createElement('td')
+//                 let total_product_versions = document.createElement('td')
+//                 let trial_releases = document.createElement('td')
+//                 let creation_date = document.createElement('td')
+
+
+//                 name.innerHTML = obj.name
+//                 total_licenses.innerHTML = obj.total_licenses
+//                 trial_activations.innerHTML = obj.trial_activations
+//                 total_product_versions.innerHTML = obj.total_product_versions
+//                 trial_releases.innerHTML = obj.trial_releases
+//                 creation_date.innerHTML = obj.creation_date
+
+
+//                 row.appendChild(name)
+//                 row.appendChild(total_licenses)
+//                 row.appendChild(trial_activations)
+//                 row.appendChild(total_product_versions)
+//                 row.appendChild(trial_releases)
+//                 row.appendChild(creation_date)
+
+//                 table.appendChild(row)
+
+
+
+
+
+
+
+
+
+
+
+//             };
+//         }
+//         window.onload=load
+        
+
+
+//     </script>
+
+
+
+
+
+
+    //  let token = localStorage.getItem('token')
+    //     if (token) {
+    //     fetch("https://api.cryptlex.com/v3/products")
+    //         .then(function (response) {
+    //             return response.json();
+
+    //         })
+    //         .then(function (products) {
+    //             let placeholder = document.getElementById("#data-output");
+    //             let out = "";
+    //             for (let product of products) {
+    //                 out += `
+    //             <tr>
+    //                 <td>${product.name}</td>
+    //                 <td>${product.totalLicenses}</td>
+    //                 <td>${product.totalTrialActivations}</td>
+    //                 <td>${product.totalProductVersions}</td>
+    //                 <td>${product.totalReleases}</td>
+    //                 <td>${product.createdAt}</td>
+
+    //                 </tr>
+    //             `;
+    //             }
+    //             placeholder.innerHTML = out;
+    //         })
+    // </script>
+
+
+    let link = document.createElement('a')
+            link.href = "sadasd.html"
+            let total_licenses = document.createElement('td').appendChild(link)
+
+    
+
+

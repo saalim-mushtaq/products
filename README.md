@@ -1,0 +1,4 @@
+- Save access token in localstorage on successful login
+- redirect to products page on successful login
+- check if token exists on products page
+- send GET requests to get products and show them in table

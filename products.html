@@ -62,7 +62,8 @@
             <p>Home > Products</p>
         </div>
         <div>
-            <img style="float: right;margin-right: 3em;padding-top: 0.7em" class="fa fa-plus" src="./images/font-awesome-4.7.0/fonts/" alt="" data-bs-toggle="modal" data-bs-target="#myModal">
+            <img style="float: right;margin-right: 3em;padding-top: 0.7em" class="fa fa-plus"
+                src="./images/font-awesome-4.7.0/fonts/" alt="" data-bs-toggle="modal" data-bs-target="#myModal">
 
 
             <img style="float: right;margin-right:3em;padding-top: 0.7em;" class="fa fa-refresh"
@@ -75,20 +76,24 @@
         <table class="table">
             <thead style="color: grey;" class="thead">
                 <tr>
+                    <th scope="col">Id</th>
                     <th scope="col">Name</th>
                     <th scope="col">Total Licenses</th>
                     <th scope="col">Total Trial Activations</th>
                     <th scope="col">Total Product Versions</th>
                     <th scope="col">Total Releases</th>
                     <th scope="col">Creation Date</th>
+                    <th scope="col">Options</th>
+
+
                 </tr>
             </thead>
             <tbody id="table-body">
             </tbody>
         </table>
-    </div> 
+    </div>
     <div class="modal fade" id="myModal">
-        <div class="modal-dialog">
+        <div class="modal-dialog" id="dialog">
             <div class="modal-content">
                 <div class="modal-body">
                     <form action="" id="form-container">
@@ -98,27 +103,29 @@
                         <input type="text" class="form-control" id="display-name">
                         <label for="description" class="form-label">Description</label>
                         <input type="text" class="form-control" id="description">
-                        <label  for="license-policy" class="form-label">Default License Policy</label>
-                        <select  class="form-select " 
-                            id="license-policy" required>
+                        <label for="license-policy" class="form-label">Default License Policy</label>
+                        <select class="form-select " id="license-policy" required>
                             <option selected></option>
-                            <option value="6ffbdf18-9808-4f18-b98c-3e853d5ea933
-                            ">Sample</option>
+                            <option value="6ffbdf18-9808-4f18-b98c-3e853d5ea933">Sample</option>
                         </select>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">CLOSE</button>
+                            <button type="submit" class="btn btn-secondary" id="close"
+                                data-bs-dismiss="modal">CLOSE</button>
                             <input type="submit" class="btn btn-secondary">
                         </div>
                     </form>
+                    <div id="success"></div>
+                    <div id="error"></div>
                 </div>
             </div>
         </div>
     </div>
-    
-    
+
+
     <script src="./node_modules/axios/dist/axios.min.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="products.js"></script>
+
 
 </body>
 
